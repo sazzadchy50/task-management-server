@@ -35,8 +35,10 @@ async function run() {
       console.log(result);
       res.send(result)
     }) 
+
     app.get("/api/v1/dashboard/get-tasks", async(req, res)=>{
-      
+      const result = await taskCollection.find().toArray();
+      res.send(result)
     })
 
 
